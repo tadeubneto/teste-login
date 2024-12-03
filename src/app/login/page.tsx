@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useAuth } from "@/contexts/AuthContext"
 import { useRouter } from "next/navigation"
 
+
 export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -16,7 +17,8 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="flex flex-1 flex-col items-center justify-center bg-slate-200">
+      
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-lg shadow-md w-96"
