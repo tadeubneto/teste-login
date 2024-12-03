@@ -1,6 +1,7 @@
 'use client'
 import {useAuth} from '@/contexts/AuthContext'
 import { useRouter } from 'next/navigation';
+import {LogOut} from "lucide-react"
 
 export default function LogoutButton() {
 
@@ -11,7 +12,7 @@ export default function LogoutButton() {
         
         try {
             await logout()
-            router.push('/login')
+            router.push('/')
         }catch (error) {
             console.error("Erro ao fazer o logour", error)
         }
@@ -20,8 +21,9 @@ export default function LogoutButton() {
 return (
     <button
       onClick={handleLogout}
-      className="bg-red-500 text-white p-2 rounded-md hover:bg-red-600"
+      className=" flex gap-2 items-center text-gray-700 hover:text-blue-600 transition-colors"
     >
+      <LogOut className="w-5 h-5" />
       Sair
     </button>
   );
